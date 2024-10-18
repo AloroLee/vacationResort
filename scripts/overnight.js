@@ -1,6 +1,28 @@
 
 function getReceipt (checkInDate, roomType, wantsQueen, wantsKing, wantsSuite, numberOfStay){
-    let (checkInDate >= 6 && ) 
+    let rate;
+    if (month >= 6 && month <= 8) {
+        if(roomType === wantsQueen)
+            rate = 250;
+    }else {
+        if(roomType === wantsQueen)
+            rate = 150;
+    }
+    if (month >= 6 && month <= 8) {
+        if(roomType === wantsKing)
+            rate = 250;
+    }else {
+        if(roomType === wantsKing)
+            rate = 150;
+    }
+    if (month >= 6 && month <= 8) {
+        if(roomType === wantsSuite)
+            rate = 350;
+    }else {
+        if(roomType === wantsSuite)
+            rate = 210;
+    }
+    return rate;
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
