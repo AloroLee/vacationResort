@@ -10,16 +10,63 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
     <script src="./scripts/main.js"></script>
+    <script src="./scripts/overnight.js"></script>
+
 </head>
 <body>
     <script>
         document.write(header);
     </script>
-    <video autoplay="" class="fr-video fr-draggable desktop-img" id="video-background" loop="" muted="" playsinline=""
-        poster="./images/gifslide.jpg"
-        style="object-fit: cover; height: 100%; max-height: 800px; width: 100%; margin: auto;">
-        <source type="video/mp4" src="./images/gifslide.jpg">
-    </video>
+    <main>
+        <form id="overnightForm">
+            <div>
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" required><br>
+            </div>
+            <div>
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" required><br>
+            </div>
+            <div>
+                <label for="when">Check-in Date:</label>
+                <input type="date" id="when" name="when" required><br>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+            </div>
+            <div>
+                <label for="nights">Number of Nights (1-28):</label>
+                <input type="number" id="nights" name="nights" required><br>
+            </div>
+            <div>
+                <label>Room Type:</label><br>
+                <input type="radio" id="queen" name="room" value="Queen" required>
+                <label for="queen">Queen</label><br>
+                <input type="radio" id="king" name="room" value="King">
+                <label for="king">King</label><br>
+                <input type="radio" id ="suite" name="room" value="Two_Bedroom_Suite">
+                <label for="suite">2-Bedroom Suite</label><br>
+            </div>
+            <div>
+                <label for="adults">Number of Adults (1-4):</label>
+                <input type="number" id="adults" name="adults" min="1" max="4" required><br>
+                <label for="children">Number of Children (0-4):</label>
+                <input type="number" id="children" name="children" min="0" max="4" required><br>
+            </div>
+            <div>
+                <label>Discount:</label><br>
+                <input type="radio" id="none" name="discount" value="None" required>
+                <label for="none">None:</label><br>
+                <input type="radio" id="aaa" name="discount" value="AAA/Senior">
+                <label for="aaa">AAA/Senior (10%)</label><br>
+                <input type="radio" id="military" name="discount" value="Military">
+                <label for="military">Military (20%)</label><br>
+            </div>
+            <input type="submit" value="Save">
+        </form>
+        <div id="output">?</div>
+    </main>
     <footer>
         &copy;2024
     </footer>
