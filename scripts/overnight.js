@@ -1,22 +1,25 @@
 
 function getReceipt (checkInDate, roomType, wantsQueen, wantsKing, wantsSuite, numberOfStay){
-    const inSeasonMonths = (June, July, August)
+    const date = new Date(checkInDate)
+    const month = date.getMonth();
+    console.log("month()",month)
+    const isPEAK = month >=5 && month <=7;
     let rate;
-    if (inSeasonMonths) {
+    if (isPEAK) {
         if(roomType === wantsQueen)
             rate = 250;
     }else {
         if(roomType === wantsQueen)
             rate = 150;
     }
-    if (inSeasonMonths) {
+    if (isPEAK) {
         if(roomType === wantsKing)
             rate = 250;
     }else {
         if(roomType === wantsKing)
             rate = 150;
     }
-    if (inSeasonMonths) {
+    if (isPEAK) {
         if(roomType === wantsSuite)
             rate = 350;
     }else {
