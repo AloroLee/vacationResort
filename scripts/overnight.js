@@ -1,21 +1,22 @@
 
 function getReceipt (checkInDate, roomType, wantsQueen, wantsKing, wantsSuite, numberOfStay){
+    const inSeasonMonths = (June, July, August)
     let rate;
-    if (month >= 6 && month <= 8) {
+    if (inSeasonMonths) {
         if(roomType === wantsQueen)
             rate = 250;
     }else {
         if(roomType === wantsQueen)
             rate = 150;
     }
-    if (month >= 6 && month <= 8) {
+    if (inSeasonMonths) {
         if(roomType === wantsKing)
             rate = 250;
     }else {
         if(roomType === wantsKing)
             rate = 150;
     }
-    if (month >= 6 && month <= 8) {
+    if (inSeasonMonths) {
         if(roomType === wantsSuite)
             rate = 350;
     }else {
@@ -23,6 +24,18 @@ function getReceipt (checkInDate, roomType, wantsQueen, wantsKing, wantsSuite, n
             rate = 210;
     }
     return rate;
+
+    let roomRate = (numberOfStay * roomType)
+
+    let discount = 0;
+    if (discount === aaa){
+        discount = 0.10;
+    }else{
+        if(discount === military)
+        discount = 0.20;
+    }
+
+
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
