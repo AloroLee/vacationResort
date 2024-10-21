@@ -6,24 +6,24 @@ function getReceipt (checkInDate, roomType, wantsQueen, wantsKing, wantsSuite, n
     const isPEAK = month >=5 && month <=7;
     let rate;
     if (isPEAK) {
-        if(roomType === wantsQueen)
+        if("queen" === roomType)
             rate = 250;
     }else {
-        if(roomType === wantsQueen)
+        if("queen" === roomType)
             rate = 150;
     }
     if (isPEAK) {
-        if(roomType === wantsKing)
+        if("king" === roomType)
             rate = 250;
     }else {
-        if(roomType === wantsKing)
+        if("king" === roomType)
             rate = 150;
     }
     if (isPEAK) {
-        if(roomType === wantsSuite)
+        if("suite" === roomType)
             rate = 350;
     }else {
-        if(roomType === wantsSuite)
+        if("suite" === roomType)
             rate = 210;
     }
     return rate;
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const firstname = document.getElementById("firstname");
     const lastname = document.getElementById("lastname");
     const email = document.getElementById("email");
-    const nights = document.getElementById("nights");
+    const nights = Number(document.getElementById("nights").value);
     const queen = document.getElementById("queen");
     const king = document.getElementById("king");
     const suite = document.getElementById("suite");
