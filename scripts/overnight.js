@@ -7,36 +7,47 @@ function getReceipt (checkInDate, roomType, wantsQueen, wantsKing, wantsSuite, n
     let rate;
     if (isPEAK) {
         if("queen" === roomType)
-            rate = 250;
+            roomRate = 250;
     }else {
         if("queen" === roomType)
-            rate = 150;
+            roomRate = 150;
     }
     if (isPEAK) {
         if("king" === roomType)
-            rate = 250;
+            roomRate = 250;
     }else {
         if("king" === roomType)
-            rate = 150;
+            roomRate = 150;
     }
     if (isPEAK) {
         if("suite" === roomType)
-            rate = 350;
+            roomRate = 350;
     }else {
         if("suite" === roomType)
-            rate = 210;
+            roomRate = 210;
     }
-    return rate;
-
-    let roomRate = (numberOfStay * roomType)
+    return roomRate;
 
     let discount = 0;
     if (discount === aaa){
         discount = 0.10;
-    }else{
-        if(discount === military)
+    }else
+        if(discount === military){
         discount = 0.20;
     }
+    const discountRoomCost = totalRoomCost * (1 - discount);
+    
+    const tax = discountRoomCost * 0.12;
+    let totalRoomCost = roomRate * nights;
+    const totalTax = tax * nights;
+    const totalCost = totalRoomCost + totalTax;
+    output.innerText = `
+        Room Cost: $${roomRate.toFixed(2)}
+        Discount Rate: ${discount}
+        Tax: $${tax}
+        Total Room Cost: $${totalCost.toFixed(2)}
+    `;
+
 
 
 }
